@@ -3,6 +3,8 @@ before_action :current_book, only: [:edit, :update, :destroy]
   def show
     @book = Book.find(params[:id])
     @user = @book.user
+    @book_comments = @book.book_comments
+    @book_comment = BookComment.new
   end
 
   def index
